@@ -1,0 +1,17 @@
+[package]
+name = "wasi-io-hang"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = ["adder"]
+[dependencies]
+wasmtime = "21"
+wasmtime-wasi = "21"
+tokio = { version = "1", default-features = false, features = [
+    "rt-multi-thread",
+    "macros",
+    "tracing",
+    "fs",
+] }
+anyhow = "1.0"
